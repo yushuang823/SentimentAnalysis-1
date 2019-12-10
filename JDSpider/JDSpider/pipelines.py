@@ -5,7 +5,8 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-from scrapy.conf import settings
+from scrapy.utils.project import get_project_settings
+settings = get_project_settings()
 import pymongo
 
 class JdspiderPipeline(object):
