@@ -72,8 +72,10 @@ def word2vecFun(textName, modelName):
 
 
 def getStopWords(stopWordsName):
-    with open(stopWordsName) as f:
-        stopWords = [word.replace("\n", "") for word in f.readlines()]
+    with open(stopWordsName,'rb') as f:
+        # stopWords = [word.replace("\n", "") for word in f.readlines()]
+        stopWords = f.read().strip().decode('utf-8')
+        # stopWords = [f.readlines().strip().decode('utf-8')]
     return stopWords
 
 
